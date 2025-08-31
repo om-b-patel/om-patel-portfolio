@@ -1,166 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Om Patel | Portfolio</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="Om Patel | Portfolio" />
-  <meta name="description" content="Analyst • Product Builder • Strategist | Consulting • Fintech • Strategy • RPM/APM" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://om-b-patel.github.io/om-patel-portfolio/" />
-  <meta property="og:title" content="Om Patel | Portfolio" />
-  <meta property="og:description" content="Analyst • Product Builder • Strategist | Consulting • Fintech • Strategy • RPM/APM" />
-  <meta property="og:image" content="https://om-b-patel.github.io/om-patel-portfolio/social-preview.svg" />
-
-  <!-- Twitter -->
-  <meta property="twitter:card" content="summary_large_image" />
-  <meta property="twitter:url" content="https://om-b-patel.github.io/om-patel-portfolio/" />
-  <meta property="twitter:title" content="Om Patel | Portfolio" />
-  <meta property="twitter:description" content="Analyst • Product Builder • Strategist | Consulting • Fintech • Strategy • RPM/APM" />
-  <meta property="twitter:image" content="https://om-b-patel.github.io/om-patel-portfolio/social-preview.svg" />
+  <!-- TailwindCSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
   <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Social Preview -->
+  <meta property="og:title" content="Om Patel | Finance & Strategy Portfolio">
+  <meta property="og:description" content="Consulting • Fintech • Strategy • RPM/APM • Summer 2026">
+  <meta property="og:image" content="social-preview.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://om-b-patel.github.io/om-patel-portfolio">
+
+  <style>
+    body { font-family: 'Inter', sans-serif; background: #0b0c10; }
+
+    /* Hero glow behind OM PATEL */
+    .hero-title::before {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      width: 160%; height: 160%;
+      transform: translate(-50%, -50%) scale(1);
+      background: radial-gradient(circle at center, rgba(0,212,255,0.5), rgba(255,106,0,0.3) 70%, transparent 100%);
+      filter: blur(60px);
+      border-radius: 50%;
+      z-index: -1;
+      animation: glowPulse 6s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+      50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.9; }
+    }
+
+    /* Gradient bar pulse */
+    .gradient-bar { background: linear-gradient(90deg, #00d4ff, #ff6a00); }
+    .pulse-bar { animation: barPulse 6s ease-in-out infinite; }
+    @keyframes barPulse {
+      0%, 100% { transform: scaleX(1); opacity: 0.8; }
+      50% { transform: scaleX(1.05); opacity: 1; }
+    }
+
+    /* Scroll reveals */
+    .reveal { opacity: 0; transform: translateY(40px); transition: all 1s ease; }
+    .reveal.active { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-<body>
-  <!-- NAV -->
-  <header class="nav">
-    <a class="brand" href="#">
-      <span class="logo">OP</span>
-      <span class="brand-text">Om&nbsp;Patel</span>
-    </a>
-    <nav class="nav-links">
-      <a href="#apps">Apps</a>
-      <a href="#artifacts">Artifacts</a>
-      <a class="btn btn-outline" href="https://docs.google.com/document/d/1PkrALUEsPh_EbC_p39Ncbvb1w70z9QK8VYVaFsje_wo/export?format=pdf" target="_blank" rel="noopener">Resume</a>
-    </nav>
+<body class="text-gray-200">
+
+  <!-- Sticky Navbar -->
+  <nav class="fixed top-0 left-0 w-full bg-[#0b0c10]/80 backdrop-blur-md z-50 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
+      <a href="#top" class="flex items-center gap-2">
+        <img src="favicon.svg" alt="OP Logo" class="h-7 w-7">
+        <span class="text-white font-bold text-lg tracking-wide">Om Patel</span>
+      </a>
+      <div class="flex gap-6 text-sm font-medium">
+        <a href="#apps" class="nav-link text-gray-300 hover:text-white">Apps</a>
+        <a href="#artifacts" class="nav-link text-gray-300 hover:text-white">Artifacts</a>
+        <a href="#connect" class="nav-link text-gray-300 hover:text-white">Connect</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Anchor for top -->
+  <div id="top"></div>
+
+  <!-- Hero Section -->
+  <header class="relative h-screen flex flex-col justify-center items-center text-center px-4 overflow-hidden">
+    <!-- 3D Background -->
+    <div id="hero-bg" class="absolute inset-0 z-0"></div>
+
+    <!-- Hero Content -->
+    <div class="relative z-10">
+      <h1 class="hero-title relative inline-block text-5xl md:text-7xl font-extrabold tracking-wide text-white">OM PATEL</h1>
+      <div class="gradient-bar pulse-bar h-1 w-48 my-6 rounded-full mx-auto"></div>
+      <p class="text-lg md:text-xl text-gray-300">Analyst • Product Builder • Strategist</p>
+      <p class="text-sm md:text-base text-gray-500 mt-2">Consulting • Fintech • Strategy • RPM/APM • Summer 2026</p>
+    </div>
   </header>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="kicker">Analyst • Product Builder • Strategist</div>
-      <h1 class="headline">
-        MINIMA<span class="tight">LIST</span>
-      </h1>
-      <div class="prism-bar" aria-hidden="true"></div>
-      <p class="sub">
-        I build lean data apps, ship fast experiments, and package the work to decision-grade clarity.
-        Fintech risk. Crypto insights. Measurable lift.
-      </p>
-      <div class="hero-ctas">
-        <a class="btn" href="#apps">View Work</a>
-        <a class="btn btn-ghost" href="#artifacts">Product Docs</a>
+  <!-- Apps -->
+  <section id="apps" class="max-w-5xl mx-auto py-20 px-6 reveal">
+    <h2 class="text-2xl font-semibold text-white border-l-4 border-cyan-400 pl-3 mb-10">Apps</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-[#161b22] p-8 rounded-xl transition card-hover">
+        <h3 class="text-xl font-semibold mb-3">Fintech Risk Mini-App</h3>
+        <p class="text-gray-400 mb-6">SMA crossover backtest & metrics. Real-time signals with reproducible insights.</p>
+        <div class="flex gap-4">
+          <a href="https://fintech-risk.streamlit.app" target="_blank" class="px-4 py-2 rounded-lg border border-gray-600 hover:bg-cyan-400 hover:text-black">Live Demo</a>
+          <a href="https://github.com/om-b-patel/fintech-risk-mini-app" target="_blank" class="px-4 py-2 rounded-lg border border-gray-600 hover:bg-cyan-400 hover:text-black">Source Code</a>
+        </div>
       </div>
-    </div>
-    <div class="hero-art" aria-hidden="true">
-      <div class="rib rib-1"></div>
-      <div class="rib rib-2"></div>
-      <div class="rib rib-3"></div>
+      <div class="bg-[#161b22] p-8 rounded-xl transition card-hover">
+        <h3 class="text-xl font-semibold mb-3">Crypto Insights App</h3>
+        <p class="text-gray-400 mb-6">Portfolio allocation from BTC/ETH/SPY. Interactive charts + equity curve.</p>
+        <div class="flex gap-4">
+          <a href="https://crypto-insights-app.streamlit.app" target="_blank" class="px-4 py-2 rounded-lg border border-gray-600 hover:bg-cyan-400 hover:text-black">Live Demo</a>
+          <a href="https://github.com/om-b-patel/crypto-insights-app" target="_blank" class="px-4 py-2 rounded-lg border border-gray-600 hover:bg-cyan-400 hover:text-black">Source Code</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- APPS -->
-  <section id="apps" class="section">
-    <div class="section-head">
-      <h2>Apps</h2>
-      <p class="section-sub">Lightweight tools with real usage logging and clean deployment.</p>
-    </div>
-    <div class="card-grid">
-      <article class="card">
-        <div class="card-kicker">Streamlit • Python • yfinance • SQLite</div>
-        <h3 class="card-title">Fintech Risk Mini-App</h3>
-        <p class="card-body">
-          SMA-crossover backtest & metrics. Includes usage logging (SQLite) and a one-file deploy.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://fintech-risk.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
-          <a class="btn btn-outline" href="https://github.com/om-b-patel/fintech-risk-mini-app" target="_blank" rel="noopener">Source</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-kicker">Streamlit • Python • yfinance • SQLite</div>
-        <h3 class="card-title">Crypto Insights App</h3>
-        <p class="card-body">
-          Portfolio value index + allocation from simple “SYMBOL:WEIGHT” inputs. Reproducible charts, daily data.
-        </p>
-        <div class="card-actions">
-          <a class="btn" href="https://crypto-insights-app.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
-          <a class="btn btn-outline" href="https://github.com/om-b-patel/crypto-insights-app" target="_blank" rel="noopener">Source</a>
-        </div>
-      </article>
+  <!-- Product Artifacts -->
+  <section id="artifacts" class="max-w-5xl mx-auto py-20 px-6 reveal">
+    <h2 class="text-2xl font-semibold text-white border-l-4 border-cyan-400 pl-3 mb-10">Product Artifacts</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-[#161b22] p-8 rounded-xl transition card-hover">
+        <h3 class="text-xl font-semibold mb-3">Inventory Tracker PRD</h3>
+        <p class="text-gray-400 mb-6">Goals, user stories, and success metrics for inventory management.</p>
+        <a href="https://github.com/om-b-patel/product-artifacts/blob/main/inventory_tracker_prd.md" target="_blank" class="px-4 py-2 rounded-lg border border-gray-600 hover:bg-cyan-400 hover:text-black">View Document</a>
+      </div>
+      <div class="bg-[#161b22] p-8 rounded-xl transition card-hover">
+        <h3 class="text-xl font-semibold mb-3">Lead Gen Growth Experiment</h3>
+        <p class="text-gray-400 mb-6">Multi-channel growth strategy with hypothesis, metrics, and results.</p>
+        <a href="https://github.com/om-b-patel/product-artifacts/blob/main/growth_experiment.md" target="_blank" class="px-4 py-2 rounded-lg border border-gray-600 hover:bg-cyan-400 hover:text-black">View Document</a>
+      </div>
     </div>
   </section>
 
-  <!-- ARTIFACTS -->
-  <section id="artifacts" class="section">
-    <div class="section-head">
-      <h2>Product Artifacts</h2>
-      <p class="section-sub">Concise, decision-useful docs with clear goals, measures, and guardrails.</p>
-    </div>
-    <div class="card-stack">
-      <article class="doc">
-        <div class="doc-left">
-          <h3 class="doc-title">Inventory Tracker PRD</h3>
-          <p class="doc-body">
-            Scope, user stories, and success metrics for a simple inventory management system.
-          </p>
-        </div>
-        <div class="doc-right">
-          <a class="btn btn-ghost" href="https://github.com/om-b-patel/product-artifacts/blob/main/inventory_tracker_prd.md" target="_blank" rel="noopener">View</a>
-        </div>
-      </article>
-
-      <article class="doc">
-        <div class="doc-left">
-          <h3 class="doc-title">Lead Gen Growth Experiment</h3>
-          <p class="doc-body">
-            Hypothesis → approach → lift. Multi-channel experiment write-up with crisp metric framing.
-          </p>
-        </div>
-        <div class="doc-right">
-          <a class="btn btn-ghost" href="https://github.com/om-b-patel/product-artifacts/blob/main/growth_experiment.md" target="_blank" rel="noopener">View</a>
-        </div>
-      </article>
+  <!-- Connect -->
+  <section id="connect" class="max-w-5xl mx-auto py-20 px-6 reveal">
+    <h2 class="text-2xl font-semibold text-white border-l-4 border-cyan-400 pl-3 mb-10">Connect</h2>
+    <div class="flex flex-wrap gap-4">
+      <a href="https://docs.google.com/document/d/1PkrALUEsPh_EbC_p39Ncbvb1w70z9QK8VYVaFsje_wo/export?format=pdf" target="_blank" class="px-6 py-2 rounded-full bg-[#0d1117] border border-gray-600 hover:bg-cyan-400 hover:text-black">Resume (PDF)</a>
+      <a href="https://github.com/om-b-patel" target="_blank" class="px-6 py-2 rounded-full bg-[#0d1117] border border-gray-600 hover:bg-cyan-400 hover:text-black">GitHub</a>
+      <a href="https://www.linkedin.com/in/ompatel12" target="_blank" class="px-6 py-2 rounded-full bg-[#0d1117] border border-gray-600 hover:bg-cyan-400 hover:text-black">LinkedIn</a>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <div class="links">
-        <a class="chip" href="https://docs.google.com/document/d/1PkrALUEsPh_EbC_p39Ncbvb1w70z9QK8VYVaFsje_wo/export?format=pdf" target="_blank" rel="noopener">Resume (PDF)</a>
-        <a class="chip" href="https://github.com/om-b-patel" target="_blank" rel="noopener">GitHub</a>
-        <a class="chip" href="https://www.linkedin.com/in/ompatel12" target="_blank" rel="noopener">LinkedIn</a>
-      </div>
-      <div class="fine">
-        <span>© <span id="y"></span> Om Patel</span>
-        <span class="dot">•</span>
-        <span>Consulting • Fintech • Strategy • RPM/APM</span>
-      </div>
-    </div>
+  <!-- Footer -->
+  <footer class="text-center py-10 border-t border-gray-800 text-gray-500 text-sm">
+    © <span id="y"></span> Om Patel. All rights reserved.
   </footer>
 
+  <!-- JS: Year -->
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+  <!-- JS: Reveal on Scroll -->
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    const els = document.querySelectorAll('.card, .doc, .section-head');
-    const io = new IntersectionObserver((obs) => {
-      obs.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
-    }, { threshold: 0.15 });
-    els.forEach(el => io.observe(el));
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('active');
+      });
+    }, { threshold: 0.2 });
+    reveals.forEach(section => observer.observe(section));
+  </script>
+
+  <!-- JS: Active Nav Highlight -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 120;
+        if (scrollY >= sectionTop) current = section.getAttribute("id");
+      });
+      navLinks.forEach(link => {
+        link.classList.remove("text-white"); link.classList.add("text-gray-300");
+        if (link.getAttribute("href") === "#" + current) link.classList.add("text-white");
+      });
+    });
+  </script>
+
+  <!-- JS: 3D Blob + Particles -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.150.1/build/three.min.js"></script>
+  <script id="vertexShader" type="x-shader/x-vertex">
+    varying vec3 vNormal;
+    void main() { vNormal = normalize(normalMatrix * normal); gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }
+  </script>
+  <script id="fragmentShader" type="x-shader/x-fragment">
+    varying vec3 vNormal;
+    void main() {
+      float intensity = (vNormal.y + 1.0) / 2.0;
+      vec3 cyan = vec3(0.0, 0.83, 1.0);
+      vec3 orange = vec3(1.0, 0.42, 0.0);
+      vec3 color = mix(orange, cyan, intensity);
+      gl_FragColor = vec4(color, 1.0);
+    }
+  </script>
+  <script>
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.getElementById("hero-bg").appendChild(renderer.domElement);
+
+    const geometry = new THREE.IcosahedronGeometry(6, 6);
+    const material = new THREE.ShaderMaterial({
+      vertexShader: document.getElementById('vertexShader').textContent,
+      fragmentShader: document.getElementById('fragmentShader').textContent,
+      side: THREE.DoubleSide
+    });
+    const blob = new THREE.Mesh(geometry, material);
+    scene.add(blob);
+
+    camera.position.z = 20;
+
+    const posAttr = geometry.attributes.position;
+    const vCount = posAttr.count;
+    const originalPositions = new Float32Array(posAttr.array);
+
+    function animateBlob(time) {
+      for (let i=0; i<vCount; i++) {
+        const ix = i*3, iy = ix+1, iz = ix+2;
+        const offset = Math.sin(time/1200 + i) * 0.25;
+        posAttr.array[ix] = originalPositions[ix] + offset;
+        posAttr.array[iy] = originalPositions[iy] + offset;
+        posAttr.array[iz] = originalPositions[iz] + offset;
+      }
+      posAttr.needsUpdate = true;
+    }
+
+    // Particles
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 400;
+    const positions = new Float32Array(particlesCount * 3);
+    for (let i=0; i<positions.length; i++) positions[i] = (Math.random()-0.5)*100;
+    particlesGeometry.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    const particlesMaterial = new THREE.PointsMaterial({ color: 0x00d4ff, size: 0.4, transparent: true, opacity: 0.8 });
+    const particles = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particles);
+
+    // Scroll fade
+    window.addEventListener("scroll", () => {
+      const maxScroll = window.innerHeight * 0.8;
+      const current = Math.min(window.scrollY, maxScroll);
+      const factor = 1 - current / maxScroll;
+      particlesMaterial.opacity = Math.max(0, 0.8 * factor);
+    });
+
+    function animate(time) {
+      requestAnimationFrame(animate);
+      blob.rotation.x += 0.001;
+      blob.rotation.y += 0.002;
+      animateBlob(time);
+      particles.rotation.y += 0.0005;
+      particles.rotation.x += 0.0003;
+      renderer.render(scene, camera);
+    }
+    animate();
+
+    window.addEventListener("resize", () => {
+      camera.aspect = window.innerWidth/window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
   </script>
 </body>
 </html>
