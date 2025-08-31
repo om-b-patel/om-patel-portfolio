@@ -1,178 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Om Patel — Portfolio</title>
-  <meta name="description" content="Fintech risk app, crypto insights app, product PRDs, and growth experiments by Om Patel. Analyst • Product Builder • Strategist — open to NYC (Summer/Aug 2026 start).">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Om Patel | Portfolio</title>
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://om-b-patel.github.io/om-patel-portfolio/" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
 
-  <!-- Favicon & Social Preview (add files to repo root) -->
-  <link rel="icon" href="favicon.ico">
-  <meta property="og:title" content="Om Patel — Portfolio">
-  <meta property="og:description" content="Fintech risk app, crypto insights app, PRDs, and growth experiments. Analyst • Product Builder • Strategist.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://om-b-patel.github.io/om-patel-portfolio/">
-  <meta property="og:image" content="social.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Om Patel — Portfolio">
-  <meta name="twitter:description" content="Fintech risk app, crypto insights app, PRDs, and growth experiments.">
-  <meta name="twitter:image" content="social.png">
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Om Patel | Portfolio" />
+  <meta name="description" content="Analyst • Product Builder • Strategist | Consulting • Fintech • Strategy • RPM/APM" />
 
-  <!-- JSON-LD: Person + WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Person",
-    "name":"Om Patel",
-    "jobTitle":"Analyst, Product Builder, Strategist",
-    "url":"https://om-b-patel.github.io/om-patel-portfolio/",
-    "sameAs":[
-      "https://github.com/om-b-patel",
-      "https://www.linkedin.com/in/ompatel12"
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebSite",
-    "name":"Om Patel — Portfolio",
-    "url":"https://om-b-patel.github.io/om-patel-portfolio/",
-    "publisher":{
-      "@type":"Person",
-      "name":"Om Patel"
-    }
-  }
-  </script>
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://om-b-patel.github.io/om-patel-portfolio/" />
+  <meta property="og:title" content="Om Patel | Portfolio" />
+  <meta property="og:description" content="Analyst • Product Builder • Strategist | Consulting • Fintech • Strategy • RPM/APM" />
+  <meta property="og:image" content="https://om-b-patel.github.io/om-patel-portfolio/social-preview.svg" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://om-b-patel.github.io/om-patel-portfolio/" />
+  <meta property="twitter:title" content="Om Patel | Portfolio" />
+  <meta property="twitter:description" content="Analyst • Product Builder • Strategist | Consulting • Fintech • Strategy • RPM/APM" />
+  <meta property="twitter:image" content="https://om-b-patel.github.io/om-patel-portfolio/social-preview.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- Optional analytics (privacy-friendly). Uncomment and replace domain if you set up Plausible.
-  <script defer data-domain="om-b-patel.github.io" src="https://plausible.io/js/script.js"></script>
-  -->
-  <style>
-    /* smooth scrolling */
-    html{scroll-behavior:smooth;}
-  </style>
 </head>
 <body>
-  <!-- Sticky nav -->
-  <nav class="topnav">
-    <div class="nav-inner">
-      <a class="brand" href="#top">
-        <span class="avatar" aria-hidden="true">
-          <!-- minimalist monogram -->
-          <svg viewBox="0 0 40 40" width="28" height="28" role="img">
-            <defs>
-              <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#5aa0ff"/>
-                <stop offset="1" stop-color="#7ec0ff"/>
-              </linearGradient>
-            </defs>
-            <circle cx="20" cy="20" r="19" fill="url(#g)" opacity="0.18" />
-            <text x="50%" y="55%" text-anchor="middle" font-family="Inter, system-ui, -apple-system, Segoe UI, Arial" font-size="16" fill="#9fc7ff" font-weight="700">OP</text>
-          </svg>
-        </span>
-        <span class="brand-name">Om Patel</span>
-      </a>
-      <div class="nav-links">
-        <a href="#apps">Apps</a>
-        <a href="#artifacts">Product Artifacts</a>
-        <a href="#connect">Connect</a>
+  <!-- NAV -->
+  <header class="nav">
+    <a class="brand" href="#">
+      <span class="logo">OP</span>
+      <span class="brand-text">Om&nbsp;Patel</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#apps">Apps</a>
+      <a href="#artifacts">Artifacts</a>
+      <a class="btn btn-outline" href="https://docs.google.com/document/d/1PkrALUEsPh_EbC_p39Ncbvb1w70z9QK8VYVaFsje_wo/export?format=pdf" target="_blank" rel="noopener">Resume</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="kicker">Analyst • Product Builder • Strategist</div>
+      <h1 class="headline">
+        MINIMA<span class="tight">LIST</span>
+      </h1>
+      <div class="prism-bar" aria-hidden="true"></div>
+      <p class="sub">
+        I build lean data apps, ship fast experiments, and package the work to decision-grade clarity.
+        Fintech risk. Crypto insights. Measurable lift.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn" href="#apps">View Work</a>
+        <a class="btn btn-ghost" href="#artifacts">Product Docs</a>
       </div>
     </div>
-  </nav>
+    <div class="hero-art" aria-hidden="true">
+      <div class="rib rib-1"></div>
+      <div class="rib rib-2"></div>
+      <div class="rib rib-3"></div>
+    </div>
+  </section>
 
-  <a id="top"></a>
-  <div class="container">
-
-    <header>
-      <h1>Om Patel</h1>
-      <p class="sub">Analyst • Product Builder • Strategist &nbsp;·&nbsp; Open to NYC • Summer/Aug 2026 start</p>
-    </header>
-
-    <section id="apps">
-      <h2 class="section-title">Apps</h2>
-
+  <!-- APPS -->
+  <section id="apps" class="section">
+    <div class="section-head">
+      <h2>Apps</h2>
+      <p class="section-sub">Lightweight tools with real usage logging and clean deployment.</p>
+    </div>
+    <div class="card-grid">
       <article class="card">
-        <div class="card-head">
-          <h3>Fintech Risk Mini-App</h3>
-          <span class="kpis">
-            <span class="kpi">SMA crossover</span>
-            <span class="kpi">Backtest & metrics</span>
-          </span>
-        </div>
-        <p>A Streamlit app showcasing a simple moving average crossover strategy with performance metrics.</p>
-        <div class="links">
-          <a class="chip" href="https://fintech-risk.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
-          <a class="chip" href="https://github.com/om-b-patel/fintech-risk-mini-app" target="_blank" rel="noopener">Source Code</a>
+        <div class="card-kicker">Streamlit • Python • yfinance • SQLite</div>
+        <h3 class="card-title">Fintech Risk Mini-App</h3>
+        <p class="card-body">
+          SMA-crossover backtest & metrics. Includes usage logging (SQLite) and a one-file deploy.
+        </p>
+        <div class="card-actions">
+          <a class="btn" href="https://fintech-risk.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
+          <a class="btn btn-outline" href="https://github.com/om-b-patel/fintech-risk-mini-app" target="_blank" rel="noopener">Source</a>
         </div>
       </article>
 
       <article class="card">
-        <div class="card-head">
-          <h3>Crypto Insights App</h3>
-          <span class="kpis">
-            <span class="kpi">Portfolio index</span>
-            <span class="kpi">Allocation</span>
-          </span>
-        </div>
-        <p>Enter your crypto or equity holdings and visualize portfolio value and allocation over time.</p>
-        <div class="links">
-          <a class="chip" href="https://crypto-insights-app.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
-          <a class="chip" href="https://github.com/om-b-patel/crypto-insights-app" target="_blank" rel="noopener">Source Code</a>
+        <div class="card-kicker">Streamlit • Python • yfinance • SQLite</div>
+        <h3 class="card-title">Crypto Insights App</h3>
+        <p class="card-body">
+          Portfolio value index + allocation from simple “SYMBOL:WEIGHT” inputs. Reproducible charts, daily data.
+        </p>
+        <div class="card-actions">
+          <a class="btn" href="https://crypto-insights-app.streamlit.app" target="_blank" rel="noopener">Live Demo</a>
+          <a class="btn btn-outline" href="https://github.com/om-b-patel/crypto-insights-app" target="_blank" rel="noopener">Source</a>
         </div>
       </article>
-    </section>
+    </div>
+  </section>
 
-    <section id="artifacts">
-      <h2 class="section-title">Product Artifacts</h2>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>Inventory Tracker PRD</h3>
-          <span class="kpis"><span class="kpi">Goals</span><span class="kpi">User stories</span><span class="kpi">Success metrics</span></span>
+  <!-- ARTIFACTS -->
+  <section id="artifacts" class="section">
+    <div class="section-head">
+      <h2>Product Artifacts</h2>
+      <p class="section-sub">Concise, decision-useful docs with clear goals, measures, and guardrails.</p>
+    </div>
+    <div class="card-stack">
+      <article class="doc">
+        <div class="doc-left">
+          <h3 class="doc-title">Inventory Tracker PRD</h3>
+          <p class="doc-body">
+            Scope, user stories, and success metrics for a simple inventory management system.
+          </p>
         </div>
-        <p>A product requirements document outlining goals, user stories, and success metrics for an inventory management system.</p>
-        <div class="links">
-          <a class="chip" href="https://github.com/om-b-patel/product-artifacts/blob/main/inventory_tracker_prd.md" target="_blank" rel="noopener">View Document</a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-head">
-          <h3>Lead Gen Growth Experiment</h3>
-          <span class="kpis"><span class="kpi">Hypothesis</span><span class="kpi">Channels</span><span class="kpi">Metrics</span></span>
-        </div>
-        <p>An experiment write-up detailing the multi-channel growth strategy, hypothesis, metrics, and results.</p>
-        <div class="links">
-          <a class="chip" href="https://github.com/om-b-patel/product-artifacts/blob/main/growth_experiment.md" target="_blank" rel="noopener">View Document</a>
+        <div class="doc-right">
+          <a class="btn btn-ghost" href="https://github.com/om-b-patel/product-artifacts/blob/main/inventory_tracker_prd.md" target="_blank" rel="noopener">View</a>
         </div>
       </article>
-    </section>
 
-    <section id="connect">
-      <h2 class="section-title">Connect</h2>
+      <article class="doc">
+        <div class="doc-left">
+          <h3 class="doc-title">Lead Gen Growth Experiment</h3>
+          <p class="doc-body">
+            Hypothesis → approach → lift. Multi-channel experiment write-up with crisp metric framing.
+          </p>
+        </div>
+        <div class="doc-right">
+          <a class="btn btn-ghost" href="https://github.com/om-b-patel/product-artifacts/blob/main/growth_experiment.md" target="_blank" rel="noopener">View</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
       <div class="links">
         <a class="chip" href="https://docs.google.com/document/d/1PkrALUEsPh_EbC_p39Ncbvb1w70z9QK8VYVaFsje_wo/export?format=pdf" target="_blank" rel="noopener">Resume (PDF)</a>
         <a class="chip" href="https://github.com/om-b-patel" target="_blank" rel="noopener">GitHub</a>
         <a class="chip" href="https://www.linkedin.com/in/ompatel12" target="_blank" rel="noopener">LinkedIn</a>
       </div>
-      <p class="sub footnote">Consulting • Fintech • Strategy • RPM/APM</p>
-    </section>
-
-    <footer class="footer">
-      <div>© <span id="y"></span> Om Patel. All rights reserved.</div>
-      <div>Built with Python + Streamlit + a pinch of CSS.</div>
-    </footer>
-  </div>
+      <div class="fine">
+        <span>© <span id="y"></span> Om Patel</span>
+        <span class="dot">•</span>
+        <span>Consulting • Fintech • Strategy • RPM/APM</span>
+      </div>
+    </div>
+  </footer>
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    const els = document.querySelectorAll('.card, .doc, .section-head');
+    const io = new IntersectionObserver((obs) => {
+      obs.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+    }, { threshold: 0.15 });
+    els.forEach(el => io.observe(el));
   </script>
 </body>
 </html>
